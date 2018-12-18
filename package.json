@@ -1,0 +1,32 @@
+{
+  "name": "crape",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "gulp",
+    "node": "nodemon dist/app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cheerio": "^0.22.10",
+    "@types/download": "^6.2.3",
+    "@types/mongodb": "^3.1.17",
+    "@types/request": "^2.48.1",
+    "@types/request-promise": "^4.1.42",
+    "cheerio": "^1.0.0-rc.2",
+    "download": "^7.1.0",
+    "gulp": "^4.0.0",
+    "gulp-cached": "^1.1.1",
+    "gulp-typescript": "^5.0.0",
+    "nodemon": "^1.18.9",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2",
+    "typescript": "^3.2.2"
+  },
+  "dependencies": {
+    "mongodb": "^3.1.10"
+  }
+}
