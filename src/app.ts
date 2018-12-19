@@ -3,7 +3,6 @@ import cheerio from 'cheerio'
 import './mongo'
 import {fetchContentImage} from './page'
 import config from './config'
-
 requestPromise({
     url: `${config.base}/touxiang/`,
     headers: config.headers,
@@ -16,11 +15,9 @@ requestPromise({
     })
     return img
 }).then(urls => {
-    console.log(urls)
-    // imgs.map((i: string) => {
-    //     fetchContentImage(i)
-    //     console.log(i)
-    // })
-
-    
+    let time = setInterval(() => {
+        // console.log(urls.shift())
+        fetchContentImage(urls.shift())
+        if(urls.length == 0) clearInterval(time)
+    }, 300)
 })

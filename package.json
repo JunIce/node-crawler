@@ -13,6 +13,7 @@
   "devDependencies": {
     "@types/cheerio": "^0.22.10",
     "@types/download": "^6.2.3",
+    "@types/md5": "^2.1.33",
     "@types/mongodb": "^3.1.17",
     "@types/mongoose": "^5.3.5",
     "@types/request": "^2.48.1",
@@ -28,6 +29,7 @@
     "typescript": "^3.2.2"
   },
   "dependencies": {
+    "md5": "^2.2.1",
     "mongodb": "^3.1.10",
     "mongoose": "^5.4.0"
   }
