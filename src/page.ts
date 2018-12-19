@@ -1,7 +1,9 @@
 import requestPromise from 'request-promise'
 import cheerio from 'cheerio'
 import download from 'download'
+import {guidGenerator} from './util'
 import path from 'path'
+import Url from './urlModel'
 
 
 export function fetchContentImage(url: string): any {
@@ -20,19 +22,12 @@ export function fetchContentImage(url: string): any {
             let filename = `${guidGenerator()}${path.extname(img)}`
             let origin = img.split('!')[0]
             let originImg = `${origin}${path.extname(img)}`
-            console.log(originImg)
-            // download(originImg, '../images', {
-            //     filename: filename
-            // }).then(data => {
-            //     console.log(data)
-            // })
+            download(originImg, '../images', {
+                filename: filename
+            }).then(() => {
+                let u = new Url({url: filename})
+                u.save()
+            })
         })
     })
-}
-function guidGenerator() {
-    return (S4()+S4()+"-"+S4()+S4()+"-"+S4()+S4()+S4());
-}
-function S4() {
-    const rand = (1 + Math.random()) * 0x10000;
-    return (rand | 0).toString(16).substring(1);
 }
